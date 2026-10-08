@@ -57,7 +57,7 @@ function rewriteLinks(html) {
 
 function header(active='') {
   const item = (id,label,extra='') => `<a href="${pages[id].file}" class="${active===id?'active ':''}${extra}">${label}</a>`;
-  return `<div class="status-strip" role="status"><span class="status-dot" aria-hidden="true"></span><span>机场推荐与风险信息持续更新</span><span class="status-time">更新至 2026.10.03 · 已发布 40 篇指南</span></div>
+  return `<div class="status-strip" role="status"><span class="status-dot" aria-hidden="true"></span><span>机场推荐与风险信息持续更新</span><span class="status-time">更新至 2026.10.08 · 已发布 50 篇指南</span></div>
   <header class="site-header" id="top"><a class="brand" href="index.html" aria-label="机场眼首页"><span class="brand-mark" aria-hidden="true">机</span><span>机场眼</span></a>
   <nav class="main-nav" id="main-nav" aria-label="主导航">${item('recommend','机场推荐')}${item('budget','性价比机场')}${item('compare','机场对比')}${item('coupons','机场优惠码')}${item('faq','机场 FAQ')}${item('warning','<span class="pulse-dot"></span>跑路预警','nav-warning')}${item('blog','博客')}
   <div class="nav-dropdown"><button class="dropdown-trigger" type="button" aria-expanded="false">资源 <i data-lucide="chevron-down" class="dropdown-arrow"></i></button><div class="dropdown-menu"><a href="resources.html#resources-clients"><i data-lucide="download"></i> 客户端下载</a><a href="resources.html#resources-tools"><i data-lucide="wrench"></i> 订阅转换工具</a><a href="resources.html#resources-speed"><i data-lucide="activity"></i> 节点测速工具</a></div></div>
@@ -93,7 +93,7 @@ const portal = `<section class="section home-portals" aria-labelledby="portal-ti
   <a href="compare.html"><i data-lucide="table-2"></i><strong>机场对比</strong><span>六家方案的完整数据横向对比</span></a>
   <a href="coupons.html"><i data-lucide="ticket-percent"></i><strong>优惠码</strong><span>查看折扣、折后价格与使用规则</span></a>
   <a href="warning.html"><i data-lucide="triangle-alert"></i><strong>跑路预警</strong><span>风险信号、历史案例和止损方法</span></a>
-  <a href="blog.html"><i data-lucide="newspaper"></i><strong>博客文章</strong><span>40 篇选购、教程与安全文章</span></a>
+  <a href="blog.html"><i data-lucide="newspaper"></i><strong>博客文章</strong><span>50 篇选购、教程与安全文章</span></a>
   <a href="resources.html"><i data-lucide="wrench"></i><strong>资源中心</strong><span>客户端、规则、测速与检测工具</span></a>
   <a href="faq.html"><i data-lucide="circle-help"></i><strong>机场 FAQ</strong><span>快速解决新手常见问题</span></a>
   <a href="about.html"><i data-lucide="info"></i><strong>关于机场眼</strong><span>了解评测方法和内容原则</span></a>
