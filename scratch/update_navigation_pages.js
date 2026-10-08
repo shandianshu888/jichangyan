@@ -718,29 +718,89 @@ function renderPills() {
   }).join('\n          ');
 }
 
-function renderRecommendCards() {
-  return airports.map(a => {
-    const featuredCls = a.featured ? ' featured' : '';
-    const btnCls = a.featured ? 'button button-primary' : 'button button-outline';
-    const priceLabel = a.hasDiscount ? '7 折后月费' : '月付原价';
-    const priceDisplay = a.hasDiscount 
-      ? `<strong class="price-val">¥${a.discountPrice}</strong> <small>/ 月</small>`
-      : `<strong class="price-val">¥${a.originalPrice}.00</strong> <small>/ 月</small>`;
-    
-    return `<article class="recommend-card${featuredCls}" id="${a.id}">
-          <div class="card-badge">${a.badge}</div>
-          <div class="card-header"><img class="provider-logo" src="${a.logo}" alt="${a.name} Logo"><div><h3>${a.name}</h3><p class="subtitle">${a.type}</p></div></div>
-          <div class="card-metrics">
-            <div class="metric-item metric-price"><span class="metric-label">${priceLabel}</span><div class="metric-price-value">${priceDisplay}</div></div>
-            <div class="metric-item metric-speed"><span class="metric-label">晚高峰参考速度</span><strong class="speed-val">${a.speed}</strong></div>
-            <div class="metric-item"><span class="metric-label">专属优惠码</span><button type="button" class="copy-btn copy-badge" data-code="${a.code}" title="点击一键复制优惠码"><strong class="code-val">${a.code}</strong> <span class="copy-icon-tag"><i data-lucide="copy"></i> 复制</span></button></div>
-            <div class="metric-item"><span class="metric-label">核心优势</span><strong class="advantage-val">${a.advantage}</strong></div>
+function renderStandaloneHeroCard(a) {
+  return `<div class="standalone-hero-card" id="${a.id}">
+        <div class="hero-card-banner">
+          <span class="hero-badge">👑 2026年度编辑首推 · 综合第一旗舰</span>
+          <span class="hero-tag">IEPL双入口冗余专线 · 4K/办公极速推荐</span>
+        </div>
+        <div class="hero-card-content">
+          <div class="hero-card-left">
+            <div class="provider-brand">
+              <img class="hero-provider-logo" src="${a.logo}" alt="${a.name} Logo">
+              <div>
+                <h3 class="hero-provider-name">${a.name}</h3>
+                <p class="hero-provider-type">${a.type} · 全平台流畅解锁</p>
+              </div>
+            </div>
+            <div class="hero-reason-text">
+              <strong>编辑首推理由：</strong>${a.reason}
+            </div>
+            <ul class="hero-adv-list">
+              <li><i data-lucide="shield-check"></i> <strong>双入口冗余</strong>：广深/沪日双入口自动选路，线路在线率更高</li>
+              <li><i data-lucide="zap"></i> <strong>极速 4K / 办公</strong>：晚高峰实测 ${a.speed}，高清视频首开秒加载</li>
+              <li><i data-lucide="sparkles"></i> <strong>全平台解锁</strong>：稳定解锁 Netflix、ChatGPT、Disney+ 等海外服务</li>
+            </ul>
           </div>
-          <div class="card-reason"><strong>推荐理由</strong><p>${a.reason}</p></div>
-          <ul class="card-advantages">${a.advantages.map(adv => `<li>${adv}</li>`).join('')}</ul>
-          <div class="card-footer">${a.tags.map(t => `<span class="tag">${t}</span>`).join('')}<a class="${btnCls}" href="${a.url}" target="_blank" rel="sponsored noopener noreferrer">查看${a.name}套餐</a></div>
-        </article>`;
-  }).join('\n\n        ');
+          <div class="hero-card-right">
+            <div class="hero-price-box">
+              <span class="price-label">限定 7 折优惠价</span>
+              <div class="hero-price-display">
+                <strong class="price-val">¥${a.discountPrice}</strong> <small>/ 月</small>
+                <span class="orig-price">原价 ¥${a.originalPrice}.00</span>
+              </div>
+            </div>
+            <div class="hero-coupon-box">
+              <span class="coupon-label">专属优惠码（一键复制）：</span>
+              <button type="button" class="copy-btn copy-badge hero-copy-badge" data-code="${a.code}" title="点击一键复制优惠码">
+                <strong class="code-val">${a.code}</strong> <span class="copy-icon-tag"><i data-lucide="copy"></i> 复制</span>
+              </button>
+            </div>
+            <a class="button button-primary hero-action-btn" href="${a.url}" target="_blank" rel="sponsored noopener noreferrer">
+              <i data-lucide="external-link"></i> 访问${a.name}官网
+            </a>
+          </div>
+        </div>
+      </div>`;
+}
+
+function renderSingleRecommendCard(a) {
+  const featuredCls = a.featured ? ' featured' : '';
+  const btnCls = a.featured ? 'button button-primary' : 'button button-outline';
+  const priceLabel = a.hasDiscount ? '7 折后月费' : '月付原价';
+  const priceDisplay = a.hasDiscount 
+    ? `<strong class="price-val">¥${a.discountPrice}</strong> <small>/ 月</small>`
+    : `<strong class="price-val">¥${a.originalPrice}.00</strong> <small>/ 月</small>`;
+  
+  return `<article class="recommend-card${featuredCls}" id="${a.id}">
+        <div class="card-badge">${a.badge}</div>
+        <div class="card-header"><img class="provider-logo" src="${a.logo}" alt="${a.name} Logo"><div><h3>${a.name}</h3><p class="subtitle">${a.type}</p></div></div>
+        <div class="card-metrics">
+          <div class="metric-item metric-price"><span class="metric-label">${priceLabel}</span><div class="metric-price-value">${priceDisplay}</div></div>
+          <div class="metric-item metric-speed"><span class="metric-label">晚高峰参考速度</span><strong class="speed-val">${a.speed}</strong></div>
+          <div class="metric-item"><span class="metric-label">专属优惠码</span><button type="button" class="copy-btn copy-badge" data-code="${a.code}" title="点击一键复制优惠码"><strong class="code-val">${a.code}</strong> <span class="copy-icon-tag"><i data-lucide="copy"></i> 复制</span></button></div>
+          <div class="metric-item"><span class="metric-label">核心优势</span><strong class="advantage-val">${a.advantage}</strong></div>
+        </div>
+        <div class="card-reason"><strong>推荐理由</strong><p>${a.reason}</p></div>
+        <ul class="card-advantages">${a.advantages.map(adv => `<li>${adv}</li>`).join('')}</ul>
+        <div class="card-footer">${a.tags.map(t => `<span class="tag">${t}</span>`).join('')}<a class="${btnCls}" href="${a.url}" target="_blank" rel="sponsored noopener noreferrer">查看${a.name}套餐</a></div>
+      </article>`;
+}
+
+function renderRecommendCards() {
+  const standaloneHero = renderStandaloneHeroCard(airports[0]);
+  const otherCards = airports.slice(1).map(a => renderSingleRecommendCard(a)).join('\n\n        ');
+
+  return `${standaloneHero}
+
+      <div class="section-subheading">
+        <h3>优质机场列表（第 2 - 24 名）</h3>
+        <p>按综合性能与性价比依次排列，提供丰富对比选择</p>
+      </div>
+
+      <div class="recommend-grid">
+        ${otherCards}
+      </div>`;
 }
 
 function renderBudgetCards() {
@@ -806,17 +866,15 @@ recommendContent = recommendContent.replace(
 );
 
 recommendContent = recommendContent.replace(
-  /<div class="nav-pills">[\s\S]*?<\/div>/,
-  `<div class="nav-pills">
+  /<div class="quick-nav-pills">[\s\S]*?<\/div>/,
+  `<div class="quick-nav-pills">
           ${renderPills()}
         </div>`
 );
 
 recommendContent = recommendContent.replace(
-  /<div class="recommend-cards">[\s\S]*?<\/div>\s*<\/section>/,
-  `<div class="recommend-cards">
-        ${renderRecommendCards()}
-      </div>
+  /<div class="recommend-grid">[\s\S]*?<\/section>/,
+  `${renderRecommendCards()}
     </section>`
 );
 

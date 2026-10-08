@@ -636,4 +636,184 @@ svg { width: 18px; height: 18px; stroke-width: 1.8; }
 }
 .highlight-card { animation: cardHighlight 1.8s ease-in-out; border-color: var(--red) !important; border-width: 2px !important; }
 
+/* Standalone Top Recommend Hero Card for 闪电鼠 */
+.standalone-hero-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fffbf8 100%);
+  border: 2px solid var(--red);
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(225, 73, 47, 0.15);
+  margin: 32px 0 42px;
+  overflow: hidden;
+  position: relative;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.standalone-hero-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 48px rgba(225, 73, 47, 0.22);
+}
+.hero-card-banner {
+  background: linear-gradient(90deg, var(--red) 0%, var(--red-dark) 100%);
+  color: white;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hero-badge {
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.hero-tag {
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.hero-card-content {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  padding: 28px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .hero-card-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px;
+  }
+}
+.provider-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.hero-provider-logo {
+  width: 68px;
+  height: 68px;
+  border-radius: 14px;
+  border: 2px solid #fee2e2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  object-fit: contain;
+  background: white;
+  padding: 4px;
+}
+.hero-provider-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.hero-provider-type {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+.hero-reason-text {
+  margin: 0 0 18px;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.7;
+  background: #fdf2f0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--red);
+  border-radius: 4px;
+}
+.hero-adv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hero-adv-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.hero-adv-list svg {
+  color: var(--red);
+  flex-shrink: 0;
+}
+.hero-card-right {
+  background: #fffdfa;
+  border: 1px solid #fee2e2;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+.hero-price-box {
+  background: #fff5f2;
+  border: 1px solid #ffcfc7;
+  border-radius: 8px;
+  padding: 12px;
+}
+.price-label {
+  font-size: 12px;
+  font-weight: 750;
+  color: var(--red-dark);
+  display: block;
+  margin-bottom: 4px;
+}
+.hero-price-display {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+}
+.hero-price-display .price-val {
+  font-size: 32px !important;
+  color: var(--red) !important;
+}
+.orig-price {
+  font-size: 12px;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+.hero-coupon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.coupon-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+.hero-copy-badge {
+  padding: 6px 14px;
+  font-size: 14px;
+}
+.hero-action-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 8px;
+}
+.section-subheading {
+  margin: 40px 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--line);
+}
+.section-subheading h3 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--ink);
+}
+.section-subheading p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+
 
