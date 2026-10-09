@@ -33,15 +33,15 @@ if (!fs.existsSync(heroPath)) {
 }
 
 const pages = {
-  recommend:{file:'recommend.html',title:'2026年机场推荐排行榜：精选24家IEPL/IPLC专线机场评测与选购指南',description:'2026年机场推荐精选排行榜，涵盖24家优质IEPL/IPLC专线机场评测，说明推荐理由、线路优势、晚高峰速度、适合人群与购买注意事项。'},
-  budget:{file:'budget.html',title:'2026便宜性价比机场推荐：10元以内月付机场选购与避坑指南',description:'2026年性价比机场选择指南，横向比较10元以内月付价格、中转线路质量、晚高峰速度、流媒体解锁和适用场景。'},
-  compare:{file:'compare.html',title:'2026机场对比与横向数据大评测：24家专线机场线路速度与折后价格对比',description:'24家专线机场线路类型、晚高峰参考速度、流媒体解锁能力、月付原价、7折优惠码与折后价格全景横向数据对比。'},
-  coupons:{file:'coupons.html',title:'2026最新机场优惠码与折扣券汇总：7折优惠、续费规则与购买省钱攻略',description:'2026年最新机场优惠码与折后价格汇总，提供7折专属折扣券，购买前核对适用套餐、重置周期和续费规则。'},
-  warning:{file:'warning.html',title:'机场跑路风险预警与避坑清单：历史案例分析、风险评分与止损方法',description:'机场跑路风险预警信号分析、公开历史失联案例汇总、风险评分模型与用户遭异常时的止损维权方法。'},
-  blog:{file:'blog.html',title:'博客文章大全：机场选购、客户端教程、网络协议与安全排障指南',description:'机场眼官方技术博客，提供机场选购指南、Clash/Sing-box客户端教程、网络协议原理、隐私安全与故障排查文章。'},
-  resources:{file:'resources.html',title:'代理客户端与网络工具资源下载：Clash、Sing-box、订阅转换与测速工具',description:'全平台代理客户端下载与必备网络工具资源中心，提供Clash Verge、Sing-box、Stash、Shadowrocket、订阅转换站与节点测速工具入口。'},
-  faq:{file:'faq.html',title:'机场常见问题解答 FAQ：线路选择、倍率扣费、节点连接与账号安全全解',description:'机场用户常见问题解答（FAQ），涵盖IEPL专线区别、套餐流量倍率扣费、客户端节点连不上排障、流媒体解锁与账号安全事项。'},
-  about:{file:'about.html',title:'关于机场眼：独立机场评测机制、数据测试标准与联系方式',description:'了解机场眼团队、独立机场评测方法、数据测试标准权重、客观公正内容原则与官方Telegram联系方式。'}
+  recommend:{file:'recommend.html',title:'2026年专线机场推荐精选排行榜：24家IEPL/IPLC机场节点速度测试、稳定评测与选购指南',description:'2026年机场推荐精选排行榜，涵盖24家优质IEPL/IPLC专线机场评测，说明推荐理由、线路优势、晚高峰速度、适合人群与购买注意事项。'},
+  budget:{file:'budget.html',title:'2026便宜性价比机场推荐排行榜：10元以内月付平民机场对比、公网直连中转选购与避坑指南',description:'2026年性价比机场选择指南，横向比较10元以内月付价格、中转线路质量、晚高峰速度、流媒体解锁和适用场景。'},
+  compare:{file:'compare.html',title:'2026专线机场横向对比大评测：24家机场线路类型、晚高峰速度、流媒体解锁与折后价格对比',description:'24家专线机场线路类型、晚高峰参考速度、流媒体解锁能力、月付原价、7折优惠码与折后价格全景横向数据对比。'},
+  coupons:{file:'coupons.html',title:'2026最新机场优惠码与折扣券大汇总：专属7折优惠券领取、套餐续费规则与购买省钱攻略',description:'2026年最新机场优惠码与折后价格汇总，提供7折专属折扣券，购买前核对适用套餐、重置周期和续费规则。'},
+  warning:{file:'warning.html',title:'2026机场跑路风险预警与避坑指南：失联历史案例分析、风险评估模型与维权止损方法',description:'机场跑路风险预警信号分析、公开历史失联案例汇总、风险评分模型与用户遭异常时的止损维权方法。'},
+  blog:{file:'blog.html',title:'机场眼官方技术博客文章大全：专线机场选购、Clash/Sing-box客户端教程与网络安全指南',description:'机场眼官方技术博客，提供机场选购指南、Clash/Sing-box客户端教程、网络协议原理、隐私安全与故障排查文章。'},
+  resources:{file:'resources.html',title:'代理客户端与网络工具资源下载大全：Clash Verge、Sing-box、订阅转换站与测速工具',description:'全平台代理客户端下载与必备网络工具资源中心，提供Clash Verge、Sing-box、Stash、Shadowrocket、订阅转换站与节点测速工具入口。'},
+  faq:{file:'faq.html',title:'2026机场新手常见问题解答 FAQ：IEPL专线区别、倍率扣费、节点连接排障与账号安全全解',description:'机场用户常见问题解答（FAQ），涵盖IEPL专线区别、套餐流量倍率扣费、客户端节点连不上排障、流媒体解锁与账号安全事项。'},
+  about:{file:'about.html',title:'关于机场眼：独立专线机场评测体系、客观数据测试标准、评测原则与 Telegram 官方联系方式',description:'了解机场眼团队、独立机场评测方法、数据测试标准权重、客观公正内容原则与官方Telegram联系方式。'}
 };
 
 const linkMap = {
@@ -57,11 +57,11 @@ function rewriteLinks(html) {
 
 function header(active='') {
   const item = (id,label,extra='') => `<a href="${pages[id].file}" class="${active===id?'active ':''}${extra}">${label}</a>`;
-  return `<div class="status-strip" role="status"><span class="status-dot" aria-hidden="true"></span><span>机场推荐与风险信息持续更新</span><span class="status-time">更新至 2026.10.08 · 已发布 50 篇指南</span></div>
+  return `<div class="status-strip" role="status"><span class="status-dot" aria-hidden="true"></span><span>机场推荐与风险信息持续更新</span><span class="status-time">更新至 2026.10.09 · 已发布 50 篇指南</span></div>
   <header class="site-header" id="top"><a class="brand" href="index.html" aria-label="机场眼首页"><span class="brand-mark" aria-hidden="true">机</span><span>机场眼</span></a>
   <nav class="main-nav" id="main-nav" aria-label="主导航">${item('recommend','机场推荐')}${item('budget','性价比机场')}${item('compare','机场对比')}${item('coupons','机场优惠码')}${item('faq','机场 FAQ')}${item('warning','<span class="pulse-dot"></span>跑路预警','nav-warning')}${item('blog','博客')}
   <div class="nav-dropdown"><button class="dropdown-trigger" type="button" aria-expanded="false">资源 <i data-lucide="chevron-down" class="dropdown-arrow"></i></button><div class="dropdown-menu"><a href="resources.html#resources-clients"><i data-lucide="download"></i> 客户端下载</a><a href="resources.html#resources-tools"><i data-lucide="wrench"></i> 订阅转换工具</a><a href="resources.html#resources-speed"><i data-lucide="activity"></i> 节点测速工具</a></div></div>
-  ${item('about','关于')}<a href="https://t.me/Ace668811" target="_blank" rel="noopener noreferrer" class="telegram-link" aria-label="通过 Telegram 联系"><i data-lucide="send"></i><span>Telegram</span></a></nav>
+  ${item('about','关于')}<a href="https://t.me/shandianshuvpn" target="_blank" rel="noopener noreferrer" class="telegram-link" aria-label="通过 Telegram 联系"><i data-lucide="send"></i><span>Telegram</span></a></nav>
   <div class="header-actions"><button class="icon-button search-trigger" type="button" aria-label="搜索"><i data-lucide="search"></i></button><button class="menu-button" type="button" aria-controls="main-nav" aria-expanded="false"><i data-lucide="menu"></i><span>菜单</span></button></div></header>`;
 }
 
@@ -98,7 +98,7 @@ const portal = `<section class="section home-portals" aria-labelledby="portal-ti
   <a href="faq.html"><i data-lucide="circle-help"></i><strong>机场 FAQ</strong><span>快速解决新手常见问题</span></a>
   <a href="about.html"><i data-lucide="info"></i><strong>关于机场眼</strong><span>了解评测方法和内容原则</span></a>
 </div></section>`;
-fs.writeFileSync(sourcePath, shell({title:'2026最新机场推荐、性价比对比、优惠码、跑路预警与使用教程',description:'机场眼：2026最新专线机场推荐排行榜、10元性价比机场对比、优惠码折扣、跑路预警信号、代理客户端教程与网络安全科普。',active:'',content:`${hero}\n${portal}`,home:true}), 'utf8');
+fs.writeFileSync(sourcePath, shell({title:'2026最新专线机场推荐排行榜与性价比对比：10元便宜机场选购指南、优惠码折扣、跑路预警与客户端教程',description:'机场眼：2026最新专线机场推荐排行榜、10元性价比机场对比、优惠码折扣、跑路预警信号、代理客户端教程与网络安全科普。',active:'',content:`${hero}\n${portal}`,home:true}), 'utf8');
 
 console.log(`Generated homepage and ${Object.keys(pages).length} standalone pages.`);
 
